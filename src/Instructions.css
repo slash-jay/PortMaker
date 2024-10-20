@@ -1,0 +1,48 @@
+.instructions-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #596caf, #2087cd);
+    transition: background 0.5s ease-in-out;
+    animation: colorChange 5s infinite alternate;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes colorChange {
+    0% {
+        background: linear-gradient(135deg, #54f4fc, #3a90c5);
+    }
+    100% {
+        background: linear-gradient(135deg, #37c0cc, #aaf1ff);
+    }
+}
+  .instructions-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .instructions-container ol {
+    padding-left: 20px;
+    line-height: 1.8;
+  }
+  
+  .instructions-container ul {
+    padding-left: 40px;
+  }
+  
+  .instructions-container code {
+    background-color: #e8e8e8;
+    padding: 2px 5px;
+    border-radius: 3px;
+  }
+  
+  .instructions-container a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .instructions-container a:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import Template from './Template';
+import Instructions from './Instructions';
+import Footer from './Footer';
 import './App.css';
 
 function App() {
+  const [showFooter, setShowFooter] = useState(false);
+
+  const handleScroll = () => {
+    // Check if user has scrolled to the bottom of the page
+    const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
+    setShowFooter(isAtBottom);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <Template />
+        <Instructions />
+      </div>
+      {showFooter && <Footer />} {/* Conditionally render the Footer */}
     </div>
   );
 }
