@@ -5,6 +5,7 @@ body {
   background: linear-gradient(135deg, #2f2f31 0%, #17191d 100%);
   animation: colorChange 5s infinite alternate;
 }
+
 .App {
   min-height: 100vh; /* Ensure the app takes at least full viewport height */
   display: flex;
@@ -18,12 +19,13 @@ footer {
 
 @keyframes colorChange {
   0% {
-      background: linear-gradient(135deg, #36373a, #13181b);
+    background: linear-gradient(135deg, #36373a, #13181b);
   }
   100% {
-      background: linear-gradient(135deg, #0e0f10, #62636b);
+    background: linear-gradient(135deg, #0e0f10, #62636b);
   }
 }
+
 .template-container {
   text-align: center;
   padding: 50px;
@@ -51,7 +53,9 @@ footer {
   display: flex;
   justify-content: space-around;
   gap: 20px;
+  flex-wrap: wrap; /* Allow cards to wrap */
 }
+
 /* From Uiverse.io by Shoh2008 */ 
 .loader-container {
   display: flex;
@@ -66,7 +70,7 @@ footer {
   position: relative;
 }
 
-.loader:before , .loader:after, .loader1:before , .loader1:after {
+.loader:before, .loader:after, .loader1:before, .loader1:after {
   content: "";
   position: absolute;
   left: 50%;
@@ -75,7 +79,7 @@ footer {
   height: 64px;
   border-radius: 50%;
   background: #FFF;
-  transform: translate(-50% , -100%)  scale(0);
+  transform: translate(-50%, -100%) scale(0);
   animation: push_401 2s infinite linear;
 }
 
@@ -87,12 +91,10 @@ footer {
   0%, 50% {
     transform: translate(-50%, 0%) scale(1);
   }
-
   100% {
     transform: translate(-50%, -100%) scale(0);
   }
 }
-
 
 .card {
   background-color: rgba(255, 255, 255, 0.1);
@@ -137,4 +139,36 @@ footer {
 
 .card-button:hover {
   background-color: #ffcc00;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .template-container {
+    padding: 20px; /* Reduced padding for smaller screens */
+  }
+
+  .main-heading {
+    font-size: 2rem; /* Smaller heading on mobile */
+    margin-bottom: 30px; /* Reduced margin */
+  }
+
+  .card-wrapper {
+    justify-content: center; /* Center cards on mobile */
+    gap: 10px; /* Smaller gap between cards */
+  }
+
+  .card {
+    width: 90%; /* Full width for cards on mobile */
+    max-width: 300px; /* Maximum width for cards */
+    margin: 10px; /* Margin between cards */
+  }
+
+  .card-button {
+    padding: 8px 16px; /* Smaller padding for buttons */
+    font-size: 14px; /* Smaller font size */
+  }
+
+  footer {
+    padding: 20px; /* Padding for footer on mobile */
+  }
 }
